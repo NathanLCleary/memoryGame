@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <div class="w3-left" style="font-size: 40px; z-index: 99; padding: 10px; height: 60px;">
+        <button onclick="btn()"><i class="fas fa-cog"></i></button>
+        <!-- The Modal -->
+        <div id="modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content ">
+                <h1>Welcome to The Memory Game</h1>
+                <h4>
+                    The game is simple. Four colours will appear on screen for 5 seconds. You must recall the four colours in the correct order as they appeared (from left to right) Once you fully recall all four colours a new set of colours will appear. The game ends when
+                    you get one wrong. How many can you get right.
+
+                </h4>
+                <table class="table" CELLSPACING=0>
+                    <tr>
+                        <td width="10%">Position</td>
+                        <td>Sets</td>
+                        <td width="32.5%">Total Correct</td>
+                        <td width="25%">Date</td>
+                    </tr>
+                    <tr>
+                        <td id="pos1">1.</td>
+                        <td id="sets1"></td>
+                        <td id="correct1"></td>
+                        <td id="time1">4/4/2020 10:23</td>
+                    </tr>
+                    <tr>
+                        <td id="pos2">2.</td>
+                        <td id="sets2"></td>
+                        <td id="correct2"></td>
+                        <td id="time2"></td>
+                    </tr>
+                    <tr>
+                        <td id="pos3">3.</td>
+                        <td id="sets3"></td>
+                        <td id="correct3"></td>
+                        <td id="time3"></td>
+                    </tr>
+                    <tr>
+                        <td id="pos4">4.</td>
+                        <td id="sets4"></td>
+                        <td id="correct4"></td>
+                        <td id="time4"></td>
+                    </tr>
+                    <tr>
+                        <td id="pos5">5.</td>
+                        <td id="sets5"></td>
+                        <td id="correct5"></td>
+                        <td id="time5"></td>
+                    </tr>
+                </table>
+                <h3> <button onclick="gameStart()">Start Game</button>
+                </h3>
+                <h6>Note: Clicking the gears will return to this screen and end the current game.
+                    <br> The above table is sorted by highest correct answers.</h6>
+            </div>
+        </div>
+    </div>
+    <h2>Memory Game</h2>
+    <h3>How many sets of sequences can you rememeber?</h3>
+    <div class="questionRow">
+        <div class="w3-quarter">
+            <div class="cell" id="cell0"></div>
+        </div>
+        <div class="w3-quarter">
+            <div class="cell" id="cell1"></div>
+        </div>
+        <div class="w3-quarter">
+            <div class="cell" id="cell2"></div>
+        </div>
+        <div class="w3-quarter">
+            <div class="cell" id="cell3"></div>
+        </div>
+    </div>
+    <br>
+    <div style="width: 100%;">
+        <h3>
+            <span class="info">
+                Time: 
+                <span id="minutes">
+                    00:
+                </span>
+            <span id="seconds">
+                    00
+                </span>
+            </span>
+            <span class="info">Correct answers: <span id="correct">0</span></span>
+            <span class="info">Sets: <span id="sets">0</span></span>
+        </h3>
+    </div>
+    <div class="bottom">
+        <div class="answerRow">
+            <div class="answer">
+                <button class="answerCell" onclick="submit('red');" id="answer1"></button>
+            </div>
+            <div class="answer">
+                <button class="answerCell" onclick="submit('blue');" id="answer2"></button>
+            </div>
+            <div class="answer">
+                <button class="answerCell" onclick="submit('yellow');" id="answer3"></button>
+            </div>
+            <div class="answer">
+                <button class="answerCell" onclick="submit('green');" id="answer4"></button>
+            </div>
+            <div class="answer" style="margin-right: 100px;">
+                <button class="answerCell" onclick="submit('orange');" id="answer5"></button>
+            </div>
+        </div>
+        <div class="answerRow">
+            <div class="answer">
+                <button class="answerCell" onclick="submit('pink');" id="answer6"></button>
+            </div>
+            <div class="answer">
+                <button class="answerCell" onclick="submit('purple');" id="answer7"></button>
+            </div>
+            <div class="answer">
+                <button class="answerCell" onclick="submit('brown');" id="answer8"></button>
+            </div>
+            <div class="answer">
+                <button class="answerCell" onclick="submit('gray');" id="answer9"></button>
+            </div>
+            <div class="answer">
+                <button class="answerCell" onclick="submit('black');" id="answer10"></button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js/time.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

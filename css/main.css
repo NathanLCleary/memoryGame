@@ -1,0 +1,104 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+}
+
+.questionRow {
+    width: 80%;
+    margin-left: 10%;
+    display: contents;
+}
+
+.cell {
+    margin: 10px;
+    border: 0.1px solid black;
+    height: 150px;
+}
+
+.answerRow {
+    width: 70%;
+    margin-left: 22%;
+}
+
+.answer {
+    width: 14%;
+    float: left;
+    height: 100px;
+    margin: 7px;
+}
+
+.answerCell {
+    margin: 10px;
+    border: 0.1px solid black;
+    height: 100px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.bottom {
+    bottom: 7px !important;
+    position: static;
+}
+
+.info {
+    margin-left: 20px;
+}
+
+#time {
+    width: 30px;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    visibility: visible;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    /* Sit on top */
+    padding-top: 70px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black w/ opacity */
+    opacity: 1;
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #fefefe;
+    color: black;
+    margin: auto;
+    padding: 20px 80px 20px 80px;
+    border: 1px solid #888;
+    width: 70vw;
+    height: 80vh;
+}
+
+table {
+    margin-left: 15%;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+td {
+    border: 1px solid black;
+    color: black;
+}
