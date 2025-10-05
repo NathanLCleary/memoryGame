@@ -124,13 +124,6 @@ memoryGame/
 - Simple color sequence gameplay
 - Basic scoring system
 
-### **Recent Updates**
-- Balanced hard mode difficulty for better playability
-- Enhanced color accessibility (replaced brown with cyan)
-- Added smooth animations and transitions
-- Improved modal and popup styling
-- Fixed XSS vulnerabilities in dynamic content
-
 ---
 
 ## 👨💻 **DEVELOPMENT**
