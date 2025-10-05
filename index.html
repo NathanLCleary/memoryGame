@@ -1,100 +1,98 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game - Test Your Memory Skills</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    <div class="w3-left" style="font-size: 40px; z-index: 99; padding: 10px; height: 60px;">
-        <button onclick="btn()"><i class="fas fa-cog"></i></button>
+    <button class="gear-button" onclick="btn()" aria-label="Open game menu">
+        ⚙️
+    </button>
         <!-- The Modal -->
         <div id="modal" class="modal">
             <!-- Modal content -->
             <div class="modal-content ">
-                <h1>Welcome to The Memory Game</h1>
+                <h1>🧠 Welcome to The Memory Game</h1>
                 <h4>
-                    The game is simple. Four colours will appear on screen for 5 seconds. You must recall the four colours in the correct order as they appeared (from left to right) Once you fully recall all four colours a new set of colours will appear. The game ends when
-                    you get one wrong. How many can you get right.
-
+                    Test your memory skills! Choose your difficulty level below, then remember the color sequence and click the colors in the correct order (left to right). Each correct sequence earns you points. The game ends when you make a mistake. How many sequences can you remember?
                 </h4>
-                <table class="table" CELLSPACING=0>
-                    <tr>
-                        <td width="10%">Position</td>
-                        <td>Sets</td>
-                        <td width="32.5%">Total Correct</td>
-                        <td width="25%">Date</td>
-                    </tr>
-                    <tr>
-                        <td id="pos1">1.</td>
-                        <td id="sets1"></td>
-                        <td id="correct1"></td>
-                        <td id="time1">4/4/2020 10:23</td>
-                    </tr>
-                    <tr>
-                        <td id="pos2">2.</td>
-                        <td id="sets2"></td>
-                        <td id="correct2"></td>
-                        <td id="time2"></td>
-                    </tr>
-                    <tr>
-                        <td id="pos3">3.</td>
-                        <td id="sets3"></td>
-                        <td id="correct3"></td>
-                        <td id="time3"></td>
-                    </tr>
-                    <tr>
-                        <td id="pos4">4.</td>
-                        <td id="sets4"></td>
-                        <td id="correct4"></td>
-                        <td id="time4"></td>
-                    </tr>
-                    <tr>
-                        <td id="pos5">5.</td>
-                        <td id="sets5"></td>
-                        <td id="correct5"></td>
-                        <td id="time5"></td>
-                    </tr>
-                </table>
-                <h3> <button onclick="gameStart()">Start Game</button>
-                </h3>
-                <h6>Note: Clicking the gears will return to this screen and end the current game.
-                    <br> The above table is sorted by highest correct answers.</h6>
+                <div class="tab">
+                    <button class="tablinks active" onclick="openTab(event, 'Easy')" id="defaultOpen">Easy</button>
+                    <button class="tablinks" onclick="openTab(event, 'Medium')">Medium</button>
+                    <button class="tablinks" onclick="openTab(event, 'Hard')">Hard</button>
+                </div>
+                <div id="Easy" class="tabcontent" style="display: block;">
+                    <table class="table" CELLSPACING=0>
+                        <tr><td>Pos</td><td>Sets</td><td>Correct</td><td>Date</td></tr>
+                        <tr><td>1.</td><td id="easy-sets1"></td><td id="easy-correct1"></td><td id="easy-time1"></td></tr>
+                        <tr><td>2.</td><td id="easy-sets2"></td><td id="easy-correct2"></td><td id="easy-time2"></td></tr>
+                        <tr><td>3.</td><td id="easy-sets3"></td><td id="easy-correct3"></td><td id="easy-time3"></td></tr>
+                        <tr><td>4.</td><td id="easy-sets4"></td><td id="easy-correct4"></td><td id="easy-time4"></td></tr>
+                        <tr><td>5.</td><td id="easy-sets5"></td><td id="easy-correct5"></td><td id="easy-time5"></td></tr>
+                    </table>
+                </div>
+                <div id="Medium" class="tabcontent">
+                    <table class="table" CELLSPACING=0>
+                        <tr><td>Pos</td><td>Sets</td><td>Correct</td><td>Date</td></tr>
+                        <tr><td>1.</td><td id="medium-sets1"></td><td id="medium-correct1"></td><td id="medium-time1"></td></tr>
+                        <tr><td>2.</td><td id="medium-sets2"></td><td id="medium-correct2"></td><td id="medium-time2"></td></tr>
+                        <tr><td>3.</td><td id="medium-sets3"></td><td id="medium-correct3"></td><td id="medium-time3"></td></tr>
+                        <tr><td>4.</td><td id="medium-sets4"></td><td id="medium-correct4"></td><td id="medium-time4"></td></tr>
+                        <tr><td>5.</td><td id="medium-sets5"></td><td id="medium-correct5"></td><td id="medium-time5"></td></tr>
+                    </table>
+                </div>
+                <div id="Hard" class="tabcontent">
+                    <table class="table" CELLSPACING=0>
+                        <tr><td>Pos</td><td>Sets</td><td>Correct</td><td>Date</td></tr>
+                        <tr><td>1.</td><td id="hard-sets1"></td><td id="hard-correct1"></td><td id="hard-time1"></td></tr>
+                        <tr><td>2.</td><td id="hard-sets2"></td><td id="hard-correct2"></td><td id="hard-time2"></td></tr>
+                        <tr><td>3.</td><td id="hard-sets3"></td><td id="hard-correct3"></td><td id="hard-time3"></td></tr>
+                        <tr><td>4.</td><td id="hard-sets4"></td><td id="hard-correct4"></td><td id="hard-time4"></td></tr>
+                        <tr><td>5.</td><td id="hard-sets5"></td><td id="hard-correct5"></td><td id="hard-time5"></td></tr>
+                    </table>
+                </div>
+                <div class="difficulty-section">
+                    <h3>🎯 Difficulty Level</h3>
+                    <div class="difficulty-buttons">
+                        <button id="easy-btn" class="difficulty-btn" onclick="setDifficulty('easy')">Easy<br><small>3 colors, 4s, no limit</small></button>
+                        <button id="medium-btn" class="difficulty-btn" onclick="setDifficulty('medium')">Medium<br><small>Progressive, faster</small></button>
+                        <button id="hard-btn" class="difficulty-btn" onclick="setDifficulty('hard')">Hard<br><small>Progressive + time limit</small></button>
+                    </div>
+                </div>
+                <button onclick="gameStart()">🚀 Start Game</button>
+                <h6>💡 Tip: Clicking the gear button will return to this screen and end the current game.<br>
+                📊 The scoreboard shows your top 5 games sorted by highest score.</h6>
             </div>
         </div>
     </div>
-    <h2>Memory Game</h2>
-    <h3>How many sets of sequences can you rememeber?</h3>
+    <h2>🎮 Memory Game</h2>
+    <h3>How many color sequences can you remember?</h3>
+    <div class="timer-display">
+        <div id="display-timer" class="countdown-timer" style="display: none;">⏰ <span></span></div>
+        <div id="input-timer" class="countdown-timer input-timer" style="display: none;">⚡ <span></span></div>
+    </div>
     <div class="questionRow">
-        <div class="w3-quarter">
-            <div class="cell" id="cell0"></div>
-        </div>
-        <div class="w3-quarter">
-            <div class="cell" id="cell1"></div>
-        </div>
-        <div class="w3-quarter">
-            <div class="cell" id="cell2"></div>
-        </div>
-        <div class="w3-quarter">
-            <div class="cell" id="cell3"></div>
-        </div>
+        <div class="cell" id="cell0" aria-label="Color position 1"></div>
+        <div class="cell" id="cell1" aria-label="Color position 2"></div>
+        <div class="cell" id="cell2" aria-label="Color position 3"></div>
+        <div class="cell" id="cell3" aria-label="Color position 4"></div>
+        <div class="cell" id="cell4" aria-label="Color position 5"></div>
+        <div class="cell" id="cell5" aria-label="Color position 6"></div>
+        <div class="cell" id="cell6" aria-label="Color position 7"></div>
+        <div class="cell" id="cell7" aria-label="Color position 8"></div>
     </div>
     <br>
-    <div style="width: 100%;">
-        <h3>
-            <span class="info">
-                Time: 
-                <span id="minutes">
-                    00:
-                </span>
-            <span id="seconds">
-                    00
-                </span>
-            </span>
-            <span class="info">Correct answers: <span id="correct">0</span></span>
-            <span class="info">Sets: <span id="sets">0</span></span>
-        </h3>
+    <div class="stats-container">
+        <span class="info">
+            ⏱️ Time: <span id="minutes">00:</span><span id="seconds">00</span>
+        </span>
+        <span class="info">✅ Correct: <span id="correct">0</span></span>
+        <span class="info">🎯 Sets: <span id="sets">0</span></span>
     </div>
     <div class="bottom">
         <div class="answerRow">
@@ -110,7 +108,7 @@
             <div class="answer">
                 <button class="answerCell" onclick="submit('green');" id="answer4"></button>
             </div>
-            <div class="answer" style="margin-right: 100px;">
+            <div class="answer">
                 <button class="answerCell" onclick="submit('orange');" id="answer5"></button>
             </div>
         </div>
@@ -122,7 +120,7 @@
                 <button class="answerCell" onclick="submit('purple');" id="answer7"></button>
             </div>
             <div class="answer">
-                <button class="answerCell" onclick="submit('brown');" id="answer8"></button>
+                <button class="answerCell" onclick="submit('cyan');" id="answer8"></button>
             </div>
             <div class="answer">
                 <button class="answerCell" onclick="submit('gray');" id="answer9"></button>

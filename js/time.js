@@ -1,19 +1,35 @@
-var totalSeconds = 0;
-var myVar = true;
-setInterval(setTime(), 1000);
+let totalSeconds = 0;
+let timerInterval = null;
 
+function startTimer() {
+    stopTimer();
+    timerInterval = setInterval(setTime, 1000);
+}
+
+function stopTimer() {
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+}
+
+function resetTimer() {
+    totalSeconds = 0;
+    updateDisplay();
+}
 
 function setTime() {
     ++totalSeconds;
-    document.getElementById("seconds").innerHTML = pad(totalSeconds % 60);
-    document.getElementById("minutes").innerHTML = pad(parseInt(totalSeconds / 60));
+    updateDisplay();
+}
+
+function updateDisplay() {
+    const secondsElement = document.getElementById("seconds");
+    const minutesElement = document.getElementById("minutes");
+    if (secondsElement) secondsElement.textContent = pad(totalSeconds % 60);
+    if (minutesElement) minutesElement.textContent = pad(Math.floor(totalSeconds / 60)) + ":";
 }
 
 function pad(val) {
-    var valString = val + "";
-    if (valString.length < 2) {
-        return "0" + valString;
-    } else {
-        return valString;
-    }
+    return val.toString().padStart(2, '0');
 }
