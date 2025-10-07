@@ -15,7 +15,7 @@
 | **Year** | 2024 |
 | **Featured** | true |
 | **HasDownload** | true |
-| **DownloadUrl** | memoryGame |
+| **PreviewUrl** | https://nathanlcleary.github.io/memoryGame |
 
 ---
 
